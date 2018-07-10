@@ -14,6 +14,17 @@
 		C40F8FFC20F4E5A300E8CD93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C40F8FFB20F4E5A300E8CD93 /* Assets.xcassets */; };
 		C40F8FFF20F4E5A300E8CD93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C40F8FFD20F4E5A300E8CD93 /* LaunchScreen.storyboard */; };
 		C40F900220F4E5A300E8CD93 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C40F900120F4E5A300E8CD93 /* main.m */; };
+		C40F901320F4F55400E8CD93 /* Brown.png in Resources */ = {isa = PBXBuildFile; fileRef = C40F900920F4F55000E8CD93 /* Brown.png */; };
+		C40F901420F4F55400E8CD93 /* Black.png in Resources */ = {isa = PBXBuildFile; fileRef = C40F900A20F4F55000E8CD93 /* Black.png */; };
+		C40F901520F4F55400E8CD93 /* DarkOrange.png in Resources */ = {isa = PBXBuildFile; fileRef = C40F900B20F4F55100E8CD93 /* DarkOrange.png */; };
+		C40F901620F4F55400E8CD93 /* Eraser.png in Resources */ = {isa = PBXBuildFile; fileRef = C40F900C20F4F55200E8CD93 /* Eraser.png */; };
+		C40F901720F4F55400E8CD93 /* LightGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = C40F900D20F4F55200E8CD93 /* LightGreen.png */; };
+		C40F901820F4F55400E8CD93 /* Grey.png in Resources */ = {isa = PBXBuildFile; fileRef = C40F900E20F4F55300E8CD93 /* Grey.png */; };
+		C40F901920F4F55400E8CD93 /* Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = C40F900F20F4F55300E8CD93 /* Blue.png */; };
+		C40F901A20F4F55400E8CD93 /* LightBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = C40F901020F4F55300E8CD93 /* LightBlue.png */; };
+		C40F901B20F4F55400E8CD93 /* DarkGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = C40F901120F4F55300E8CD93 /* DarkGreen.png */; };
+		C40F901C20F4F55400E8CD93 /* Red.png in Resources */ = {isa = PBXBuildFile; fileRef = C40F901220F4F55400E8CD93 /* Red.png */; };
+		C40F901F20F4FF7800E8CD93 /* Yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = C40F901D20F4FF7600E8CD93 /* Yellow.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +39,17 @@
 		C40F8FFE20F4E5A300E8CD93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C40F900020F4E5A300E8CD93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C40F900120F4E5A300E8CD93 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C40F900920F4F55000E8CD93 /* Brown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Brown.png; sourceTree = "<group>"; };
+		C40F900A20F4F55000E8CD93 /* Black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Black.png; sourceTree = "<group>"; };
+		C40F900B20F4F55100E8CD93 /* DarkOrange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DarkOrange.png; sourceTree = "<group>"; };
+		C40F900C20F4F55200E8CD93 /* Eraser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Eraser.png; sourceTree = "<group>"; };
+		C40F900D20F4F55200E8CD93 /* LightGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LightGreen.png; sourceTree = "<group>"; };
+		C40F900E20F4F55300E8CD93 /* Grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Grey.png; sourceTree = "<group>"; };
+		C40F900F20F4F55300E8CD93 /* Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blue.png; sourceTree = "<group>"; };
+		C40F901020F4F55300E8CD93 /* LightBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LightBlue.png; sourceTree = "<group>"; };
+		C40F901120F4F55300E8CD93 /* DarkGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DarkGreen.png; sourceTree = "<group>"; };
+		C40F901220F4F55400E8CD93 /* Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Red.png; sourceTree = "<group>"; };
+		C40F901D20F4FF7600E8CD93 /* Yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Yellow.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +66,7 @@
 		C40F8FE320F4E56900E8CD93 = {
 			isa = PBXGroup;
 			children = (
+				C40F900820F4F51800E8CD93 /* images */,
 				C40F8FEE20F4E56A00E8CD93 /* DrawingApp */,
 				C40F8FED20F4E56A00E8CD93 /* Products */,
 			);
@@ -72,6 +95,24 @@
 				C40F8FF820F4E56B00E8CD93 /* DrawingApp.xcdatamodeld */,
 			);
 			path = DrawingApp;
+			sourceTree = "<group>";
+		};
+		C40F900820F4F51800E8CD93 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				C40F901D20F4FF7600E8CD93 /* Yellow.png */,
+				C40F900A20F4F55000E8CD93 /* Black.png */,
+				C40F900F20F4F55300E8CD93 /* Blue.png */,
+				C40F900920F4F55000E8CD93 /* Brown.png */,
+				C40F901120F4F55300E8CD93 /* DarkGreen.png */,
+				C40F900B20F4F55100E8CD93 /* DarkOrange.png */,
+				C40F900C20F4F55200E8CD93 /* Eraser.png */,
+				C40F900E20F4F55300E8CD93 /* Grey.png */,
+				C40F901020F4F55300E8CD93 /* LightBlue.png */,
+				C40F900D20F4F55200E8CD93 /* LightGreen.png */,
+				C40F901220F4F55400E8CD93 /* Red.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,7 +172,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C40F901820F4F55400E8CD93 /* Grey.png in Resources */,
+				C40F901320F4F55400E8CD93 /* Brown.png in Resources */,
+				C40F901520F4F55400E8CD93 /* DarkOrange.png in Resources */,
+				C40F901F20F4FF7800E8CD93 /* Yellow.png in Resources */,
+				C40F901720F4F55400E8CD93 /* LightGreen.png in Resources */,
+				C40F901420F4F55400E8CD93 /* Black.png in Resources */,
+				C40F901620F4F55400E8CD93 /* Eraser.png in Resources */,
 				C40F8FFF20F4E5A300E8CD93 /* LaunchScreen.storyboard in Resources */,
+				C40F901B20F4F55400E8CD93 /* DarkGreen.png in Resources */,
+				C40F901A20F4F55400E8CD93 /* LightBlue.png in Resources */,
+				C40F901920F4F55400E8CD93 /* Blue.png in Resources */,
+				C40F901C20F4F55400E8CD93 /* Red.png in Resources */,
 				C40F8FFC20F4E5A300E8CD93 /* Assets.xcassets in Resources */,
 				C40F8FF720F4E56B00E8CD93 /* Main.storyboard in Resources */,
 			);

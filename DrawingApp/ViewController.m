@@ -26,4 +26,9 @@
 }
 
 
+- (IBAction)pencilPressed:(UIButton *)sender {
+}
+
+- (IBAction)eraseButtonPressed:(UIButton *)sender {
+}
 @end
