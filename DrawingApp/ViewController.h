@@ -12,6 +12,18 @@
 
 - (IBAction)pencilPressed:(UIButton *)sender;
 - (IBAction)eraseButtonPressed:(UIButton *)sender;
+- (IBAction)save:(UIButton *)sender;
+- (IBAction)reset:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *tempImage;
+@property (weak, nonatomic) IBOutlet UIImageView *mainImage;
+
+@property CGPoint lastPoint;
+@property CGFloat red;
+@property CGFloat green;
+@property CGFloat blue;
+@property CGFloat brush;
+@property CGFloat opacity;
+@property BOOL mouseSwiped;
 
 @end
 
