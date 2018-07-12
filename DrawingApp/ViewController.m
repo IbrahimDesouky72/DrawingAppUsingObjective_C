@@ -115,14 +115,24 @@
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Save Photo"
                                                                    message:@"This is an alert."
                                                             preferredStyle:UIAlertControllerStyleAlert];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField){}];
+    
     
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
                                                           handler:^(UIAlertAction * action) {
                                                               UIGraphicsBeginImageContextWithOptions(self->_mainImage.bounds.size, NO,0.0);
                                                               [self->_mainImage.image drawInRect:CGRectMake(0, 0, self->_mainImage.frame.size.width, self->_mainImage.frame.size.height)];
                                                               UIImage *SaveImage = UIGraphicsGetImageFromCurrentImageContext();
-                                                              UIGraphicsEndImageContext();
-                                                              UIImageWriteToSavedPhotosAlbum(SaveImage, self,@selector(image:didFinishSavingWithError:contextInfo:), nil);
+                                                              NSString *imageName = alert.textFields.firstObject.text;
+                                                              if ([imageName  isEqual: @""]) {
+                                                                  printf("empty");
+                                                                  //return ;
+                                                              }else {
+                                                                  UIGraphicsEndImageContext();
+                                                                  UIImageWriteToSavedPhotosAlbum(SaveImage, self,@selector(image:didFinishSavingWithError:contextInfo:), nil);
+                                                                  
+                                                              }
+                                                              
                                                               
                                                           }];
     
