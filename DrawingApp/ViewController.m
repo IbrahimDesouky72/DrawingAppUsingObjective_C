@@ -19,9 +19,11 @@
     _red = 0.0/255.0;
     _green = 0.0/255.0;
     _blue = 0.0/255.0;
-    _brush = 10.0;
+    _brush = 5.0;
     _opacity = 1.0;
-    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.data = [[NSMutableArray alloc]initWithObjects:[NSNumber numberWithDouble:1.0],[NSNumber numberWithDouble:5.0],[NSNumber numberWithDouble:10.0],[NSNumber numberWithDouble:15.0],[NSNumber numberWithDouble:20.0], nil];
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -107,7 +109,40 @@
     _opacity = 1.0;
 }
 
+
 - (IBAction)save:(UIButton *)sender {
+    
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Save Photo"
+                                                                   message:@"This is an alert."
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+                                                              UIGraphicsBeginImageContextWithOptions(self->_mainImage.bounds.size, NO,0.0);
+                                                              [self->_mainImage.image drawInRect:CGRectMake(0, 0, self->_mainImage.frame.size.width, self->_mainImage.frame.size.height)];
+                                                              UIImage *SaveImage = UIGraphicsGetImageFromCurrentImageContext();
+                                                              UIGraphicsEndImageContext();
+                                                              UIImageWriteToSavedPhotosAlbum(SaveImage, self,@selector(image:didFinishSavingWithError:contextInfo:), nil);
+                                                              
+                                                          }];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+    
+    
+}
+
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+{
+    // Was there an error?
+    if (error != NULL)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Image could not be saved.Please try again"  delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Close", nil];
+        [alert show];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Image was successfully saved in photoalbum"  delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Close", nil];
+        [alert show];
+    }
 }
 
 - (IBAction)reset:(UIButton *)sender {
@@ -166,6 +201,63 @@
     self.mainImage.image = UIGraphicsGetImageFromCurrentImageContext();
     self.tempImage.image = nil;
     UIGraphicsEndImageContext();
+}
+
+
+- (IBAction)getBrushValue:(UIButton *)sender {
+    
+    if (self.tableView.hidden == YES) {
+        self.tableView.hidden = NO;
+    }
+    
+    else
+        self.tableView.hidden = YES;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    static NSString *simpleTableIdentifier = @"SimpleTableItem";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    
+    
+    if (cell == nil) {
+        
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        
+    }
+    
+    
+    cell.textLabel.text = [[self.data objectAtIndex:indexPath.row] stringValue] ;
+    
+    
+    
+    
+    return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return [self.data count];
+    
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    [self.btnOutlet setTitle:cell.textLabel.text forState:UIControlStateNormal];
+    _brush = [cell.textLabel.text doubleValue];
+   
+    
+    
+    self.tableView.hidden = YES;
+    
+    
+    
 }
 
 
