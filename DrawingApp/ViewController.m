@@ -128,6 +128,22 @@
                                                                   printf("empty");
                                                                   //return ;
                                                               }else {
+//                                                                  NSManagedObjectContext *context = [self managedObjectContext];
+//                                                                  printf("1ggggg");
+//                                                                  // Create a new managed object
+//                                                                  NSManagedObject *entity = [NSEntityDescription insertNewObjectForEntityForName:@"Images" inManagedObjectContext:context];
+//                                                                  printf("2ggggg");
+//                                                                  
+//                                                                  
+//                                                                 // [entity setValue:UIImagePNGRepresentation(self->_mainImage.image) forKey:@"imageData"];
+//                                                                  [entity setValue:alert.textFields.firstObject.text forKey:@"imageName"];
+//                                                                  printf("3gggg");
+//                                                                  NSError *error = nil;
+//                                                                  // Save the object to persistent store
+//                                                                  if (![context save:&error]) {
+//                                                                      NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
+//                                                                  }
+                                                                  
                                                                   UIGraphicsEndImageContext();
                                                                   UIImageWriteToSavedPhotosAlbum(SaveImage, self,@selector(image:didFinishSavingWithError:contextInfo:), nil);
                                                                   
@@ -140,6 +156,16 @@
     [self presentViewController:alert animated:YES completion:nil];
     
     
+}
+
+- (NSManagedObjectContext *)managedObjectContext {
+    NSManagedObjectContext *context = nil;
+    printf("4kkkkkkk");
+    id delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)]) {
+        context = [delegate managedObjectContext];
+    }
+    return context;
 }
 
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
